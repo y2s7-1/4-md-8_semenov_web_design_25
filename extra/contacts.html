@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - 10.GRAN</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/tild3064-3033-4638-b337-663465626438/10logo_black.png" alt="10.GRAN Logo">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">УКРАШЕНИЯ</a>
+                <a href="certificates.html">СЕРТИФИКАТЫ</a>
+                <a href="stories.html">ИСТОРИИ</a>
+                <a href="gold.html">ЗОЛОТО</a>
+                <a href="service.html">СЕРВИС</a>
+                <a href="about.html">О БРЕНДЕ</a>
+                <a href="contacts.html">КОНТАКТЫ</a>
+            </nav>
+            <button class="cart-button">Корзина</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu">
+        <a href="index.html">УКРАШЕНИЯ</a>
+        <a href="certificates.html">СЕРТИФИКАТЫ</a>
+        <a href="stories.html">ИСТОРИИ</a>
+        <a href="gold.html">ЗОЛОТО</a>
+        <a href="service.html">СЕРВИС</a>
+        <a href="about.html">О БРЕНДЕ</a>
+        <a href="contacts.html">КОНТАКТЫ</a>
+    </nav>
+
+    <!-- Page Title -->
+    <section style="padding: 60px 0; background-color: #fbf8f1;">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px;">КОНТАКТЫ</h1>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section>
+        <div class="container">
+            <div class="contacts-container">
+                <div class="contact-info">
+                    <h3>Адрес</h3>
+                    <p><strong>10.GRAN Showroom</strong></p>
+                    <p>Москва, Цветной бульвар, 30с5</p>
+                    <p style="margin-top: 30px;"><strong>Часы работы:</strong></p>
+                    <p>Ежедневно с 11:00 до 21:00</p>
+
+                    <h3 style="margin-top: 40px;">Телефон</h3>
+                    <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+
+                    <h3 style="margin-top: 40px;">Email</h3>
+                    <p><a href="mailto:clients@10gran.com">clients@10gran.com</a> - Клиентский сервис</p>
+                    <p><a href="mailto:ilya@10gran.com">ilya@10gran.com</a> - Коммерческие предложения</p>
+                    <p><a href="mailto:sales@10gran.com">sales@10gran.com</a> - Запросы банков</p>
+
+                    <h3 style="margin-top: 40px;">Социальные сети</h3>
+                    <p><a href="https://t.me/10gran_channel" target="_blank">Telegram канал</a></p>
+                    <p><a href="https://instagram.com/10gran" target="_blank">Instagram</a></p>
+                </div>
+
+                <div>
+                    <h3>Напишите нам</h3>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ИНФОРМАЦИЯ</h4>
+                <a href="contacts.html">КОНТАКТЫ</a>
+                <a href="#">ПОЛИТИКА ВОЗВРАТА</a>
+                <a href="#">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+                <a href="#">ОФЕРТА</a>
+            </div>
+            <div class="footer-section">
+                <h4>ДОМ 10.GRAN</h4>
+                <p style="font-size: 13px; color: #999;">МОСКВА, ЦВЕТНОЙ БУЛЬВАР 30С5</p>
+                <p style="font-size: 13px; color: #999;">ЕЖЕДНЕВНО 11:00 — 21:00</p>
+            </div>
+            <div class="footer-section">
+                <h4>КОНТАКТЫ</h4>
+                <a href="https://t.me/10gran_channel">TELEGRAM КАНАЛ</a>
+                <p style="font-size: 13px; color: #999;">CLIENTS@10GRAN.COM<br>Клиентский сервис</p>
+                <p style="font-size: 13px; color: #999;">ILYA@10GRAN.COM<br>Коммерческие предложения и пресса</p>
+                <p style="font-size: 13px; color: #999;">SALES@10GRAN.COM<br>Запросы банков</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 10.GRAN. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner">
+        <span>Наш сайт собирает файлы cookie — это нужно, чтобы мы лучше понимали вас и улучшали качество его работы.</span>
+        <button>OK</button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Defender - Космический Шутер</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Orbitron', monospace;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #gameCanvas {
+            border: 2px solid #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            background: #000011;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .ui-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .game-ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00d4ff;
+            font-size: 18px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+        }
+        
+        .game-ui div {
+            margin-bottom: 10px;
+            background: rgba(0, 20, 40, 0.7);
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .menu-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+        }
+        
+        .menu {
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.9), rgba(0, 40, 80, 0.9));
+            border: 2px solid #00d4ff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .menu h1 {
+            font-size: 3em;
+            font-weight: 900;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+            letter-spacing: 3px;
+        }
+        
+        .menu p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #0066cc, #00d4ff);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.6);
+            background: linear-gradient(45deg, #0088ff, #00ffff);
+        }
+        
+        .controls-info {
+            background: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaccff;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .wave-notification {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #ff0040;
+            text-shadow: 0 0 20px rgba(255, 0, 64, 0.8);
+            pointer-events: none;
+            z-index: 15;
+            animation: waveAlert 2s ease-in-out;
+        }
+        
+        @keyframes waveAlert {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .health-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 200px;
+            height: 20px;
+            background: rgba(0, 20, 40, 0.7);
+            border: 2px solid #00d4ff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .health-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0040, #ffaa00, #00ff88);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+        
+        .minimap {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            height: 100px;
+            background: rgba(0, 20, 40, 0.7);
+            border: 2px solid #00d4ff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .menu h1 {
+                font-size: 2em;
+            }
+            
+            .game-ui {
+                font-size: 14px;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .health-bar {
+                width: 150px;
+                bottom: 10px;
+                left: 10px;
+            }
+            
+            .minimap {
+                width: 100px;
+                height: 60px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="1200" height="800"></canvas>
+        
+        <div class="ui-overlay">
+            <div class="game-ui">
+                <div id="score">СЧЕТ: 0</div>
+                <div id="wave">ВОЛНА: 1</div>
+                <div id="lives">ЖИЗНИ: 3</div>
+                <div id="combo">КОМБО: x1</div>
+            </div>
+            
+            <div class="health-bar">
+                <div class="health-fill" id="healthFill" style="width: 100%"></div>
+            </div>
+            
+            <div class="minimap" id="minimap"></div>
+        </div>
+        
+        <div class="menu-overlay" id="mainMenu">
+            <div class="menu">
+                <h1>SPACE DEFENDER</h1>
+                <p>Защитите космос от орд инопланетян!<br>
+                Выживите как можно дольше и установите новый рекорд.</p>
+                
+                <button class="btn" onclick="startGame()">НАЧАТЬ ИГРУ</button>
+                <button class="btn" onclick="toggleSound()">ЗВУК: ВКЛ</button>
+                <button class="btn" onclick="showHighScores()">РЕКОРДЫ</button>
+                
+                <div class="controls-info">
+                    <strong>Управление:</strong><br>
+                    WASD или Стрелки - Движение<br>
+                    Мышь - Наведение и стрельба<br>
+                    Пробел - Специальная бомба
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-overlay hidden" id="pauseMenu">
+            <div class="menu">
+                <h1>ПАУЗА</h1>
+                <button class="btn" onclick="resumeGame()">ПРОДОЛЖИТЬ</button>
+                <button class="btn" onclick="restartGame()">НАЧАТЬ ЗАНОВО</button>
+                <button class="btn" onclick="showMainMenu()">В МЕНЮ</button>
+            </div>
+        </div>
+        
+        <div class="menu-overlay hidden" id="gameOverMenu">
+            <div class="menu">
+                <h1>ИГРА ОКОНЧЕНА</h1>
+                <div style="font-size: 1.5em; margin: 20px 0; color: #00d4ff;">
+                    <div>Финальный счет: <span id="finalScore">0</span></div>
+                    <div>Волна достигнута: <span id="finalWave">1</span></div>
+                </div>
+                <button class="btn" onclick="restartGame()">ИГРАТЬ СНОВА</button>
+                <button class="btn" onclick="showMainMenu()">В МЕНЮ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="audio_controls.js"></script>
+    <script>
+        function showSettings() {
+            alert('Настройки будут доступны в следующей версии!');
+        }
+        
+        function showHighScores() {
+            const highScore = localStorage.getItem('spaceDefenderHighScore') || 0;
+            alert(`Ваш рекорд: ${highScore}`);
+        }
+    </script>
+
+<script>
+// === Глобальные обёртки для кнопок меню и инициализация игры ===
+(function() {
+  function ensureGame() {
+    if (!window.game) {
+      window.game = new SpaceDefender();
+    }
+    return window.game;
+  }
+
+  window.startGame = function() {
+    const game = ensureGame();
+    const mainMenu = document.getElementById('mainMenu');
+    if (mainMenu) mainMenu.classList.add('hidden');
+    if (game && typeof game.startGame === 'function') {
+      game.startGame();
+    }
+  };
+
+  window.restartGame = function() {
+    // Пересоздаём игру начисто
+    window.game = new SpaceDefender();
+    const over = document.getElementById('gameOverMenu');
+    if (over) over.classList.add('hidden');
+    window.game.startGame();
+  };
+
+  window.resumeGame = function() {
+
+    const game = ensureGame();
+    if (game && game.gameState === 'paused' && typeof game.togglePause === 'function') {
+      game.togglePause();
+    }
+  };
+
+
+  window.showMainMenu = function() {
+    const game = ensureGame();
+    if (game && game.gameState === 'playing') {
+      // Поставим на паузу
+      if (typeof game.togglePause === 'function' && game.gameState === 'playing') {
+        game.togglePause();
+      }
+    }
+    const mainMenu = document.getElementById('mainMenu');
+    if (mainMenu) mainMenu.classList.remove('hidden');
+    const pauseMenu = document.getElementById('pauseMenu');
+    if (pauseMenu) pauseMenu.classList.add('hidden');
+    const over = document.getElementById('gameOverMenu');
+    if (over) over.classList.add('hidden');
+  };
+  // Автоинициализация, чтобы работали обработчики клавиш и HUD
+  document.addEventListener('DOMContentLoaded', function() {
+    ensureGame();
+  });
+})();
+</script>
+
+</body>
+</html>

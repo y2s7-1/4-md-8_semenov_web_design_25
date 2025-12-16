@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Истории - 10.GRAN</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .story-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 250px;
+            background-color: #f5f1e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .story-content {
+            padding: 20px;
+        }
+
+        .story-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .story-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/tild3064-3033-4638-b337-663465626438/10logo_black.png" alt="10.GRAN Logo">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">УКРАШЕНИЯ</a>
+                <a href="certificates.html">СЕРТИФИКАТЫ</a>
+                <a href="stories.html">ИСТОРИИ</a>
+                <a href="gold.html">ЗОЛОТО</a>
+                <a href="service.html">СЕРВИС</a>
+                <a href="about.html">О БРЕНДЕ</a>
+                <a href="contacts.html">КОНТАКТЫ</a>
+            </nav>
+            <button class="cart-button">Корзина</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu">
+        <a href="index.html">УКРАШЕНИЯ</a>
+        <a href="certificates.html">СЕРТИФИКАТЫ</a>
+        <a href="stories.html">ИСТОРИИ</a>
+        <a href="gold.html">ЗОЛОТО</a>
+        <a href="service.html">СЕРВИС</a>
+        <a href="about.html">О БРЕНДЕ</a>
+        <a href="contacts.html">КОНТАКТЫ</a>
+    </nav>
+
+    <!-- Page Title -->
+    <section style="padding: 60px 0; background-color: #fbf8f1;">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 20px;">ИСТОРИИ</h1>
+            <p style="text-align: center; color: #999; font-size: 16px;">Вдохновляющие истории наших клиентов и их украшений</p>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section>
+        <div class="container">
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Первая</h3>
+                        <p>Как украшение 10.GRAN стало частью самого важного дня в жизни нашей клиентки Марии.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Вторая</h3>
+                        <p>Кольцо из серебра, которое передается из поколения в поколение в семье Петровых.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Третья</h3>
+                        <p>Как подвеска 10.GRAN помогла нашему клиенту Ивану выразить свои чувства.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Четвёртая</h3>
+                        <p>Браслет, который стал символом дружбы между двумя подругами Ольгой и Анной.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Пятая</h3>
+                        <p>Серьги из золота, которые украшают самые важные моменты жизни Елены.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">Фото истории</div>
+                    <div class="story-content">
+                        <h3>История Шестая</h3>
+                        <p>Как украшение 10.GRAN вдохновило нашего клиента Дмитрия на творчество.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Your Story Section -->
+    <section style="background-color: #f5f1e8;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">ПОДЕЛИТЕСЬ СВОЕЙ ИСТОРИЕЙ</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 16px; color: #666; margin-bottom: 30px;">
+                    Если у вас есть интересная история об украшении 10.GRAN, мы хотели бы её услышать. Напишите нам на email или в социальные сети.
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:stories@10gran.com">stories@10gran.com</a><br>
+                    <strong>Instagram:</strong> <a href="https://instagram.com/10gran" target="_blank">@10gran</a><br>
+                    <strong>Telegram:</strong> <a href="https://t.me/10gran_channel" target="_blank">@10gran_channel</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ИНФОРМАЦИЯ</h4>
+                <a href="contacts.html">КОНТАКТЫ</a>
+                <a href="#">ПОЛИТИКА ВОЗВРАТА</a>
+                <a href="#">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+                <a href="#">ОФЕРТА</a>
+            </div>
+            <div class="footer-section">
+                <h4>ДОМ 10.GRAN</h4>
+                <p style="font-size: 13px; color: #999;">МОСКВА, ЦВЕТНОЙ БУЛЬВАР 30С5</p>
+                <p style="font-size: 13px; color: #999;">ЕЖЕДНЕВНО 11:00 — 21:00</p>
+            </div>
+            <div class="footer-section">
+                <h4>КОНТАКТЫ</h4>
+                <a href="https://t.me/10gran_channel">TELEGRAM КАНАЛ</a>
+                <p style="font-size: 13px; color: #999;">CLIENTS@10GRAN.COM<br>Клиентский сервис</p>
+                <p style="font-size: 13px; color: #999;">ILYA@10GRAN.COM<br>Коммерческие предложения и пресса</p>
+                <p style="font-size: 13px; color: #999;">SALES@10GRAN.COM<br>Запросы банков</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 10.GRAN. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner">
+        <span>Наш сайт собирает файлы cookie — это нужно, чтобы мы лучше понимали вас и улучшали качество его работы.</span>
+        <button>OK</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
