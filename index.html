@@ -13,8 +13,8 @@
     }
 
     .container {
-      max-width: 600px;
-      margin: 100px auto;
+      max-width: 700px;
+      margin: 80px auto;
       background: #020617;
       padding: 40px;
       border-radius: 16px;
@@ -29,35 +29,56 @@
 
     p {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #94a3b8;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .task {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
     }
 
-    li {
-      margin-bottom: 15px;
-    }
-
-    a {
-      display: block;
-      padding: 14px 20px;
-      text-decoration: none;
-      color: #020617;
-      background: #38bdf8;
-      border-radius: 10px;
-      font-weight: bold;
+    .task h2 {
+      margin: 0 0 15px;
+      font-size: 18px;
+      color: #e5e7eb;
       text-align: center;
+    }
+
+    .links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .links a {
+      flex: 1;
+      padding: 12px;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
       transition: 0.2s;
     }
 
-    a:hover {
+    .site {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .site:hover {
       background: #0ea5e9;
-      transform: translateY(-2px);
+    }
+
+    .repo {
+      background: #1e293b;
+      color: #e5e7eb;
+    }
+
+    .repo:hover {
+      background: #334155;
     }
   </style>
 </head>
@@ -67,12 +88,46 @@
     <h1>Веб-разработка</h1>
     <p>Семёнов Юрий</p>
 
-    <ul>
-      <li><a href="task1/">Задание 1</a></li>
-      <li><a href="task2/">Задание 2</a></li>
-      <li><a href="task3/">Задание 3</a></li>
-      <li><a href="extra/">Дополнительное задание (клон сайта)</a></li>
-    </ul>
+    <div class="task">
+      <h2>Задание 1</h2>
+      <div class="links">
+        <a class="site" href="task1/">Открыть сайт</a>
+        <a class="repo" href="https://github.com/y2s7-1/4-md-8_semenov_web_design_25/tree/main/task1" target="_blank">
+          Репозиторий
+        </a>
+      </div>
+    </div>
+
+    <div class="task">
+      <h2>Задание 2</h2>
+      <div class="links">
+        <a class="site" href="task2/">Открыть сайт</a>
+        <a class="repo" href="https://github.com/y2s7-1/4-md-8_semenov_web_design_25/tree/main/task2" target="_blank">
+          Репозиторий
+        </a>
+      </div>
+    </div>
+
+    <div class="task">
+      <h2>Задание 3</h2>
+      <div class="links">
+        <a class="site" href="task3/">Открыть сайт</a>
+        <a class="repo" href="https://github.com/y2s7-1/4-md-8_semenov_web_design_25/tree/main/task3" target="_blank">
+          Репозиторий
+        </a>
+      </div>
+    </div>
+
+    <div class="task">
+      <h2>Дополнительное задание (клон сайта)</h2>
+      <div class="links">
+        <a class="site" href="extra/">Открыть сайт</a>
+        <a class="repo" href="https://github.com/y2s7-1/4-md-8_semenov_web_design_25/tree/main/extra" target="_blank">
+          Репозиторий
+        </a>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
