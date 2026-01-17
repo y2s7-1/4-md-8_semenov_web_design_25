@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Серьги с жемчугом Aurora - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для страницы товара */
+        .product-images {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .thumbnail.active,
+        .thumbnail:hover {
+            border-color: var(--accent-color);
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .main-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .zoom-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .product-info-section {
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .product-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .product-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-collection {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stars {
+            color: #FFD700;
+        }
+        
+        .review-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .product-price-section {
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .price-main {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .old-price {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        
+        .discount-percent {
+            background-color: var(--discount-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .price-installment {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .product-options {
+            margin-bottom: 30px;
+        }
+        
+        .option-group {
+            margin-bottom: 25px;
+        }
+        
+        .option-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .option-hint {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+        
+        .option-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .option-value {
+            padding: 12px 25px;
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .option-value.active,
+        .option-value:hover {
+            border-color: var(--accent-color);
+            background-color: var(--accent-light);
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            background: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .action-btn {
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .action-btn.wishlist {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .action-btn.wishlist.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .product-details-tabs {
+            margin-bottom: 60px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .specs-table td {
+            padding: 15px 0;
+        }
+        
+        .specs-table td:first-child {
+            font-weight: 600;
+            width: 200px;
+        }
+        
+        .care-list {
+            list-style: none;
+        }
+        
+        .care-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .care-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .reviews-container {
+            max-width: 800px;
+        }
+        
+        .review-item {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .review-author {
+            font-weight: 600;
+        }
+        
+        .review-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .review-text {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .related-products {
+            margin-bottom: 80px;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .zoom-modal.active {
+            display: flex;
+        }
+        
+        .zoom-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .zoom-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .zoom-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .zoom-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+        
+        .zoom-nav-btn {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        @media (max-width: 992px) {
+            .product-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .thumbnails {
+                flex-direction: row;
+                order: 2;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .main-image img {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-info-section {
+                padding: 25px 20px;
+            }
+            
+            .product-title {
+                font-size: 1.8rem;
+            }
+            
+            .price-main {
+                flex-wrap: wrap;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .tab-buttons {
+                overflow-x: auto;
+            }
+            
+            .tab-btn {
+                white-space: nowrap;
+            }
+            
+            .specs-table td:first-child {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-image img {
+                height: 300px;
+            }
+            
+            .option-values {
+                justify-content: center;
+            }
+            
+            .specs-table td {
+                display: block;
+                padding: 10px 0;
+            }
+            
+            .specs-table td:first-child {
+                width: 100%;
+                font-weight: 700;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Ювелирный дом</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Хлебные крошки -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <nav aria-label="Хлебные крошки">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="catalog.html?category=earrings">Серьги</a></li>
+                    <li><span>Серьги с жемчугом Aurora</span></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Страница товара -->
+    <main class="product-page">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Галерея изображений -->
+                <div class="product-gallery">
+                    <div class="product-images">
+                        <div class="thumbnails">
+                            <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                                <img src="https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Серьги Aurora - вид 1">
+                            </div>
+                            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Серьги Aurora - вид 2">
+                            </div>
+                            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1596120236173-2f6b0bf2cfc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                                <img src="https://images.unsplash.com/photo-1596120236173-2f6b0bf2cfc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Серьги Aurora - вид 3">
+                            </div>
+                            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Серьги Aurora - вид 4">
+                            </div>
+                        </div>
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Серьги с жемчугом Aurora" id="main-product-image">
+                            <button class="zoom-btn" aria-label="Увеличить изображение">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-badges">
+                        <span class="badge new">НОВИНКА</span>
+                        <span class="badge hit">ХИТ ПРОДАЖ</span>
+                        <span class="badge limited">ЛИМИТИРОВАННАЯ СЕРИЯ</span>
+                    </div>
+                </div>
+                
+                <!-- Информация о товаре -->
+                <div class="product-info">
+                    <div class="product-info-section">
+                        <div class="product-header">
+                            <h1 class="product-title">Серьги с жемчугом Aurora</h1>
+                            <div class="product-collection">
+                                <i class="fas fa-gem"></i>
+                                <span>Коллекция: Ocean Pearl</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="review-count">4.7 (24 отзыва)</span>
+                            </div>
+                            <p class="product-excerpt">Элегантные серьги с натуральным жемчугом Акойя. Идеальное сочетание классики и современного дизайна для особых случаев.</p>
+                        </div>
+                        
+                        <div class="product-price-section">
+                            <div class="price-main">
+                                <span class="current-price">45 200 ₽</span>
+                                <span class="old-price">56 500 ₽</span>
+                                <span class="discount-percent">-20%</span>
+                            </div>
+                            <p class="price-installment">Рассрочка 0%: 3 767 ₽/мес на 12 месяцев</p>
+                        </div>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <div class="option-title">
+                                    <span>Материал</span>
+                                    <span class="option-hint">Выберите металл</span>
+                                </div>
+                                <div class="option-values">
+                                    <div class="option-value active" data-option="material" data-value="gold">Белое золото 585</div>
+                                    <div class="option-value" data-option="material" data-value="silver">Серебро 925</div>
+                                    <div class="option-value" data-option="material" data-value="platinum">Платина 950</div>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group">
+                                <div class="option-title">
+                                    <span>Размер жемчуга</span>
+                                    <span class="option-hint">Диаметр в миллиметрах</span>
+                                </div>
+                                <div class="option-values">
+                                    <div class="option-value active" data-option="size" data-value="8">8 мм</div>
+                                    <div class="option-value" data-option="size" data-value="9">9 мм</div>
+                                    <div class="option-value" data-option="size" data-value="10">10 мм</div>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group">
+                                <div class="option-title">
+                                    <span>Тип застежки</span>
+                                    <span class="option-hint">Выберите способ крепления</span>
+                                </div>
+                                <div class="option-values">
+                                    <div class="option-value active" data-option="clasp" data-value="french">Французский замок</div>
+                                    <div class="option-value" data-option="clasp" data-value="english">Английский замок</div>
+                                    <div class="option-value" data-option="clasp" data-value="clip">Клипсы (без прокола)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <span>Количество:</span>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10" readonly>
+                                <button class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                            </div>
+                            <span class="stock-info">В наличии: 8 шт</span>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="btn btn-primary action-btn add-to-cart-btn">
+                                <i class="fas fa-shopping-bag"></i> Добавить в корзину
+                            </button>
+                            <button class="btn btn-primary action-btn buy-now-btn">
+                                <i class="fas fa-bolt"></i> Купить сейчас
+                            </button>
+                            <button class="action-btn wishlist" id="wishlist-btn">
+                                <i class="far fa-heart"></i> В избранное
+                            </button>
+                        </div>
+                        
+                        <div class="product-features">
+                            <div class="feature">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Бесплатная доставка</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Пожизненная гарантия</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-gem"></i>
+                                <span>Сертификат подлинности</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Возврат в течение 14 дней</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Детальная информация о товаре -->
+            <div class="product-details-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="description">Описание</button>
+                    <button class="tab-btn" data-tab="specs">Характеристики</button>
+                    <button class="tab-btn" data-tab="care">Уход</button>
+                    <button class="tab-btn" data-tab="reviews">Отзывы (24)</button>
+                    <button class="tab-btn" data-tab="delivery">Доставка и оплата</button>
+                </div>
+                
+                <div class="tab-content active" id="description">
+                    <div class="tab-content-inner">
+                        <h3>Элегантность в каждой детали</h3>
+                        <p>Серьги Aurora — это воплощение утонченной женственности и изысканного вкуса. Каждая пара создается вручную нашими мастерами с более чем 20-летним опытом работы с жемчугом.</p>
+                        
+                        <h4>Особенности коллекции Ocean Pearl:</h4>
+                        <ul>
+                            <li>Натуральный жемчуг Акойя высшего качества из Японии</li>
+                            <li>Идеально круглые жемчужины с ярким блеском</li>
+                            <li>Тонкая ручная работа в каждой детали</li>
+                            <li>Невероятный комфорт при ношении благодаря эргономичному дизайну</li>
+                            <li>Подходят для повседневной носки и особых случаев</li>
+                        </ul>
+                        
+                        <h4>Для кого эти серьги:</h4>
+                        <p>Идеальный выбор для женщин, ценящих классическую элегантность с современным акцентом. Эти серьги станут прекрасным дополнением как к деловому костюму, так и к вечернему платью.</p>
+                        
+                        <div class="inspiration-section">
+                            <h4>История создания:</h4>
+                            <p>Дизайн был вдохновлен северным сиянием (Aurora Borealis), что отразилось в мягких переливах жемчуга и изящных линиях оправы.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="specs">
+                    <div class="tab-content-inner">
+                        <table class="specs-table">
+                            <tr>
+                                <td>Материал</td>
+                                <td>Белое золото 585 пробы, натуральный жемчуг Акойя</td>
+                            </tr>
+                            <tr>
+                                <td>Размер жемчуга</td>
+                                <td>8-10 мм (на выбор)</td>
+                            </tr>
+                            <tr>
+                                <td>Вес</td>
+                                <td>4.2 грамма (пара)</td>
+                            </tr>
+                            <tr>
+                                <td>Длина</td>
+                                <td>2.5 см</td>
+                            </tr>
+                            <tr>
+                                <td>Застежка</td>
+                                <td>Французский замок (английский замок или клипсы - опционально)</td>
+                            </tr>
+                            <tr>
+                                <td>Происхождение жемчуга</td>
+                                <td>Япония, сертификат GIA</td>
+                            </tr>
+                            <tr>
+                                <td>Производство</td>
+                                <td>Ручная работа, Москва</td>
+                            </tr>
+                            <tr>
+                                <td>Сертификат</td>
+                                <td>Включается в комплект</td>
+                            </tr>
+                            <tr>
+                                <td>Упаковка</td>
+                                <td>Подарочная шкатулка из экокожи, салфетка для чистки</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="care">
+                    <div class="tab-content-inner">
+                        <h3>Рекомендации по уходу</h3>
+                        <p>Жемчуг — это органический материал, который требует бережного обращения. Следуйте нашим рекомендациям, чтобы ваши украшения оставались прекрасными на долгие годы:</p>
+                        
+                        <ul class="care-list">
+                            <li>Надевайте украшения после нанесения косметики и парфюма</li>
+                            <li>Храните в отдельном мягком мешочке, вдали от других украшений</li>
+                            <li>Регулярно протирайте мягкой тканью после ношения</li>
+                            <li>Избегайте контакта с водой, химическими веществами и абразивами</li>
+                            <li>Раз в год приносите украшения в салон для профессиональной чистки</li>
+                        </ul>
+                        
+                        <div class="care-warning">
+                            <h4>Важно:</h4>
+                            <p>Не используйте ультразвуковые очистители и агрессивные химические средства для чистки жемчуга.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="reviews">
+                    <div class="reviews-container">
+                        <div class="review-summary">
+                            <h3>Общая оценка: 4.7 из 5</h3>
+                            <p>На основе 24 отзывов</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-author">Анна Петрова</div>
+                                <div class="review-date">15 мая 2024</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p>Невероятно красивые серьги! Качество на высоте, жемчуг переливается на свету. Носить очень удобно, почти не чувствуются. Заказ пришел быстро, упаковано идеально. Обязательно буду заказывать ещё!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-author">Елена Смирнова</div>
+                                <div class="review-date">10 мая 2024</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p>Очень довольна покупкой. Серьги выглядят дорого и стильно. Единственное, ждала доставку чуть дольше, чем было указано. Но это мелочь по сравнению с качеством изделия.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-author">Мария Иванова</div>
+                                <div class="review-date">3 мая 2024</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p>Подарила себе на день рождения. Это мои первые серьги с настоящим жемчугом, и я в восторге! Они идеально подходят ко всему: и к платью, и к джинсам. Обслуживание на высшем уровне, консультант помогла подобрать размер.</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline" id="load-more-reviews">Показать все отзывы</button>
+                        <button class="btn btn-primary" id="add-review-btn">Добавить отзыв</button>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="delivery">
+                    <div class="tab-content-inner">
+                        <h3>Доставка</h3>
+                        <div class="delivery-options">
+                            <div class="option">
+                                <h4>Курьерская доставка</h4>
+                                <p>Бесплатная доставка по Москве в течение 1-2 дней. В другие города России — 2-5 дней.</p>
+                            </div>
+                            <div class="option">
+                                <h4>Самовывоз из салона</h4>
+                                <p>Бесплатно. Вы можете забрать заказ из любого салона Marialit. Готовность: 1 день.</p>
+                            </div>
+                            <div class="option">
+                                <h4>Экспресс-доставка</h4>
+                                <p>Доставка в день заказа. Стоимость: 500 ₽ по Москве, 1000 ₽ по России.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Оплата</h3>
+                        <div class="payment-options">
+                            <div class="option">
+                                <h4>Онлайн-оплата</h4>
+                                <p>Банковской картой (Visa, MasterCard, МИР) или через Apple Pay/Google Pay</p>
+                            </div>
+                            <div class="option">
+                                <h4>Рассрочка</h4>
+                                <p>0% на 12 месяцев от партнерских банков</p>
+                            </div>
+                            <div class="option">
+                                <h4>Оплата при получении</h4>
+                                <p>Наличными или картой курьеру или в салоне</p>
+                            </div>
+                        </div>
+                        
+                        <div class="return-info">
+                            <h4>Возврат и обмен</h4>
+                            <p>Вы можете вернуть или обменить украшение в течение 14 дней с момента получения при сохранении товарного вида и упаковки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Похожие товары -->
+            <div class="related-products">
+                <h2>Похожие украшения</h2>
+                <div class="related-grid" id="related-products">
+                    <!-- Похожие товары загружаются через JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Просмотренные товары -->
+            <div class="viewed-products">
+                <h2>Вы недавно смотрели</h2>
+                <div class="viewed-grid" id="viewed-products">
+                    <!-- Просмотренные товары загружаются через JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <!-- Футер из index.html -->
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <!-- Модальное окно из index.html -->
+    </div>
+
+    <!-- Модальное окно увеличенного изображения -->
+    <div class="zoom-modal" id="zoom-modal">
+        <div class="zoom-content">
+            <button class="zoom-close">&times;</button>
+            <div class="zoom-nav">
+                <button class="zoom-nav-btn prev-zoom"><i class="fas fa-chevron-left"></i></button>
+                <button class="zoom-nav-btn next-zoom"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <img src="" alt="" id="zoom-image">
+        </div>
+    </div>
+
+    <!-- Модальное окно отзыва -->
+    <div class="modal" id="review-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить отзыв</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="review-form">
+                    <div class="form-group">
+                        <label for="review-name">Ваше имя *</label>
+                        <input type="text" id="review-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-rating">Оценка *</label>
+                        <div class="rating-stars" id="review-rating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="rating-value" name="rating" value="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-text">Текст отзыва *</label>
+                        <textarea id="review-text" name="text" rows="4" required placeholder="Поделитесь своим впечатлением о товаре..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-email">Email (для обратной связи)</label>
+                        <input type="email" id="review-email" name="email">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

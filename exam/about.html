@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта (такая же как на главной) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Магазин бижутерии</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html" class="active">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- О компании -->
+    <main class="about-page">
+        <div class="container">
+            <h1 class="page-title">О компании Marialit</h1>
+            
+            <div class="about-hero">
+                <div class="about-hero-content">
+                    <h2>С 1995 года создаем украшения с душой</h2>
+                    <p>Marialit — это семейный ювелирный дом, специализирующийся на создании уникальных украшений с натуральным жемчугом. Наша философия — сочетание традиционных техник с современным дизайном.</p>
+                </div>
+                <div class="about-hero-image">
+				<img src="images/salons/mast.jpg" alt="Мастерская Marialit">
+                </div>
+            </div>
+            
+            <div class="about-features">
+                <div class="about-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Натуральный жемчуг</h3>
+                    <p>Работаем только с сертифицированным природным жемчугом из Японии, Таити и Австралии</p>
+                </div>
+                <div class="about-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Ручная работа</h3>
+                    <p>Каждое украшение создается вручную нашими мастерами с более чем 20-летним опытом</p>
+                </div>
+                <div class="about-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Экологичность</h3>
+                    <p>Используем ответственно добытые материалы и переработанные металлы</p>
+                </div>
+            </div>
+            
+            <div class="about-history">
+                <h2>Наша история</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1995</div>
+                        <div class="timeline-content">
+                            <h3>Основание компании</h3>
+                            <p>Мария Литовченко открыла небольшую мастерскую в Москве</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2005</div>
+                        <div class="timeline-content">
+                            <h3>Первый салон</h3>
+                            <p>Открытие первого фирменного салона в центре Москвы</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-content">
+                            <h3>Международное признание</h3>
+                            <p>Коллекция Ocean Pearl получила награду на выставке в Милане</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h3>Запуск онлайн-магазина</h3>
+                            <p>Создание современного интернет-магазина для клиентов по всей России</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-team">
+                <h2>Наша команда</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+						<img src="images/faces/fac1.jpg" alt="Мария Литовченко"> 
+                        </div>
+                        <h3>Мария Литовченко</h3>
+                        <p class="member-position">Основатель и главный дизайнер</p>
+                        <p class="member-bio">25 лет опыта в ювелирном искусстве</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+						<img src="images/faces/fac2.jpg" alt="Алексей Петров">
+                        </div>
+                        <h3>Алексей Петров</h3>
+                        <p class="member-position">Ведущий ювелир</p>
+                        <p class="member-bio">Специалист по работе с жемчугом</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+						<img src="images/faces/fac3.jpg" alt="Екатерина Смирнова">
+                        </div>
+                        <h3>Екатерина Смирнова</h3>
+                        <p class="member-position">Менеджер по клиентскому сервису</p>
+                        <p class="member-bio">Помогает подобрать идеальное украшение</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-certificates">
+                <h2>Сертификаты и награды</h2>
+                <div class="certificates-grid">
+                    <div class="certificate">
+                        <div class="certificate-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Сертификат GIA</h3>
+                        <p>Международная сертификация жемчуга</p>
+                    </div>
+                    <div class="certificate">
+                        <div class="certificate-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Премия Jewelry Awards</h3>
+                        <p>Лучшая коллекция 2023 года</p>
+                    </div>
+                    <div class="certificate">
+                        <div class="certificate-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Экологический стандарт</h3>
+                        <p>Соответствие стандартам устойчивого развития</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

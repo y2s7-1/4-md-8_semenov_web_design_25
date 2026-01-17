@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекции - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Ювелирный дом</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Коллекции -->
+    <main class="collections-page">
+        <div class="container">
+            <h1 class="page-title">Коллекции Marialit</h1>
+            <p class="page-subtitle">Уникальные дизайны, объединенные общей философией</p>
+            
+            <div class="collections-hero">
+                <div class="hero-content">
+                    <span class="hero-tag">АКТУАЛЬНАЯ КОЛЛЕКЦИЯ</span>
+                    <h2>Ocean Pearl</h2>
+                    <p>Вдохновленная красотой морских глубин, эта коллекция отражает естественную элегантность и мощь океана. Каждое изделие — это история о путешествиях, открытиях и вечной связи с природой.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">изделия</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2026</span>
+                            <span class="stat-label">год создания</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">вида жемчуга</span>
+                        </div>
+                    </div>
+                    <a href="#ocean-pearl" class="btn btn-primary">Исследовать коллекцию</a>
+                </div>
+                <div class="hero-image">
+				<img src="images/collections/col1.jpg" alt="Коллекция Ocean Pearl">
+                </div>
+            </div>
+            
+            <div class="collections-filter">
+                <button class="collection-filter-btn active" data-filter="all">Все коллекции</button>
+                <button class="collection-filter-btn" data-filter="current">Актуальные</button>
+                <button class="collection-filter-btn" data-filter="archive">Архивные</button>
+                <button class="collection-filter-btn" data-filter="limited">Лимитированные</button>
+                <button class="collection-filter-btn" data-filter="thematic">Тематические</button>
+            </div>
+            
+            <div class="collections-grid">
+                <div class="collection-card featured" id="ocean-pearl">
+                    <div class="collection-image">
+					<img src="images/collections/col1.jpg" alt="Ocean Pearl">
+                        <span class="collection-status">Актуальная</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Ocean Pearl</h3>
+                        <p class="collection-description">Морская тематика, натуральный жемчуг из разных уголков мира, серебро и золото с морскими мотивами.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Жемчуг Акойя, Таити, Южных морей</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Морская палитра: синие, зеленые, серебристые оттенки</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2026 год, 24 изделия</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=ocean-pearl" class="btn btn-primary">Смотреть изделия</a>
+                            <button class="btn btn-outline lookbook-btn" data-collection="ocean-pearl">Lookbook</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+					<img src="images/collections/col2.jpg" alt="Classic Elegance">
+                        <span class="collection-status">Постоянная</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Classic Elegance</h3>
+                        <p class="collection-description">Вечная классика для современных женщин. Утонченные формы, идеальные пропорции, вневременная красота.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Жемчуг Акойя, белое золото</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Классическая палитра: белый, золотой, серебряный</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>С 2018 года, постоянно пополняется</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=classic" class="btn btn-outline">Смотреть изделия</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+					<img src="images/collections/col3.jpg" alt="Modern Line">
+                        <span class="collection-status">Актуальная</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Modern Line</h3>
+                        <p class="collection-description">Смелые геометрические формы, асимметрия, неожиданные сочетания материалов. Для тех, кто идет в ногу со временем.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Барочный жемчуг, сталь, титан</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Современная палитра: черный, серый, акцентные цвета</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2023 год, 18 изделий</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=modern" class="btn btn-outline">Смотреть изделия</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+					<img src="images/collections/col4.jpg" alt="Vintage Collection">
+                        <span class="collection-status">Лимитированная</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Vintage Collection</h3>
+                        <p class="collection-description">Вдохновение винтажными украшениями 1920-х годов. Сложные узоры, ручная гравировка, антикварные техники.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Старинный жемчуг, желтое золото</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Винтажная палитра: кремовый, розовое золото</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2022 год, только 12 изделий</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=vintage" class="btn btn-outline">Смотреть изделия</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+					<img src="images/collections/col5.jpg" alt="Bridal Dreams">
+                        <span class="collection-status">Тематическая</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Bridal Dreams</h3>
+                        <p class="collection-description">Для самого важного дня. Нежные, романтичные украшения, которые дополнят образ невесты.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Белый жемчуг, бриллианты, платина</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Свадебная палитра: белый, серебристый, прозрачный</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2023 год, 15 изделий</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=bridal" class="btn btn-outline">Смотреть изделия</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+					<img src="images/collections/col6.jpg" alt="Urban Nature">
+                        <span class="collection-status">Архивная</span>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Urban Nature</h3>
+                        <p class="collection-description">Городская природа: сочетание индустриальных элементов с природными формами.</p>
+                        <div class="collection-details">
+                            <div class="detail">
+                                <i class="fas fa-gem"></i>
+                                <span>Речной жемчуг, медь, латунь</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Урбан-палитра: бетонный, медный, зеленый</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2021 год, архив</span>
+                            </div>
+                        </div>
+                        <div class="collection-actions">
+                            <a href="catalog.html?collection=urban" class="btn btn-outline">Смотреть изделия</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-story">
+                <h2>История создания коллекций</h2>
+                <div class="story-content">
+                    <div class="story-text">
+                        <p>Каждая коллекция Marialit начинается с путешествия. Наши дизайнеры ищут вдохновение в разных уголках мира: от морских глубин Тихого океана до старинных европейских городов.</p>
+                        <p>Процесс создания занимает от 6 месяцев до 2 лет. За это время мы:</p>
+                        <ul>
+                            <li>Изучаем материалы и техники</li>
+                            <li>Создаем эскизы и 3D-модели</li>
+                            <li>Изготавливаем прототипы</li>
+                            <li>Тестируем на фокус-группах</li>
+                            <li>Запускаем в производство</li>
+                        </ul>
+                        <p>Только после всех этих этапов коллекция появляется в наших салонах.</p>
+                    </div>
+                    <div class="story-image">
+					<img src="images/collections/col7.jpg" alt="Процесс создания">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-collections">
+                <h2>Скоро выйдут</h2>
+                <div class="upcoming-grid">
+                    <div class="upcoming-card">
+                        <div class="upcoming-preview">
+                            <div class="preview-placeholder">
+                                <span>Секрет</span>
+                            </div>
+                        </div>
+                        <div class="upcoming-info">
+                            <h3>Осень 2024</h3>
+                            <p>Новая коллекция, вдохновленная русской осенью</p>
+                            <span class="upcoming-date">Сентябрь 2026</span>
+                        </div>
+                    </div>
+                    <div class="upcoming-card">
+                        <div class="upcoming-preview">
+                            <div class="preview-placeholder">
+                                <span>Секрет</span>
+                            </div>
+                        </div>
+                        <div class="upcoming-info">
+                            <h3>Коллаборация</h3>
+                            <p>Совместная работа с известным дизайнером</p>
+                            <span class="upcoming-date">Ноябрь 2026</span>
+                        </div>
+                    </div>
+                    <div class="upcoming-card">
+                        <div class="upcoming-preview">
+                            <div class="preview-placeholder">
+                                <span>Секрет</span>
+                            </div>
+                        </div>
+                        <div class="upcoming-info">
+                            <h3>Юбилейная</h3>
+                            <p>К 30-летию Marialit</p>
+                            <span class="upcoming-date">Декабрь 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно Lookbook -->
+    <div class="modal" id="lookbook-modal">
+        <div class="modal-content wide">
+            <div class="modal-header">
+                <h3>Lookbook коллекции</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="lookbook-slider">
+                    <div class="lookbook-slide active">
+                        <img src="https://images.unsplash.com/photo-1596120236173-2f6b0bf2cfc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lookbook 1">
+                        <div class="slide-caption">
+                            <h4>Ocean Pearl: Морская тематика</h4>
+                            <p>Сочетание жемчуга разных оттенков</p>
+                        </div>
+                    </div>
+                    <div class="lookbook-slide">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lookbook 2">
+                        <div class="slide-caption">
+                            <h4>Детали и текстуры</h4>
+                            <p>Ручная работа и внимание к деталям</p>
+                        </div>
+                    </div>
+                    <div class="lookbook-slide">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lookbook 3">
+                        <div class="slide-caption">
+                            <h4>В естественной среде</h4>
+                            <p>Украшения в контексте морской тематики</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lookbook-controls">
+                    <button class="lookbook-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="lookbook-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="lookbook-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="collections.js"></script>
+</body>
+</html>

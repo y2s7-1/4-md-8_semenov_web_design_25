@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marialit - Ювелирный дом с жемчугом</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Магазин бижутерии</p>
+                </div>
+                <div class="header-actions">
+                    <!-- <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button> -->
+                    
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-баннер -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">ЛИМИТИРОВАННАЯ КОЛЛЕКЦИЯ</div>
+                <h2 class="hero-title">OCEAN PEARL</h2>
+                <p class="hero-subtitle">Элегантность морской глубины в каждой жемчужине</p>
+                <a href="collections.html" class="btn btn-primary">Выбрать украшения</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Категории</h2>
+            <div class="category-grid">
+                <a href="catalog.html?category=earrings" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/earrings.png" alt="Серьги" width="60" height="60">
+                    </div>
+                    <h3>Серьги</h3>
+                </a>
+                <a href="catalog.html?category=rings" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/ring.png" alt="Кольца" width="60" height="60">
+                    </div>
+                    <h3>Кольца</h3>
+                </a>
+                <a href="catalog.html?category=pendants" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/pearl-necklace.png" alt="Подвески" width="60" height="60">
+                    </div>
+                    <h3>Подвески</h3>
+                </a>
+                <a href="catalog.html?category=bracelets" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/bracelet.png" alt="Браслеты" width="60" height="60">
+                    </div>
+                    <h3>Браслеты</h3>
+                </a>
+                <a href="catalog.html?category=pearls" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/pearl-necklace .png" alt="Жемчуг" width="60" height="60">
+                    </div>
+                    <h3>Жемчуг</h3>
+                </a>
+                <a href="catalog.html?category=chokers" class="category-card">
+                    <div class="category-icon">
+                        <img src="icons/chain.png" alt="Чокеры" width="60" height="60">
+                    </div>
+                    <h3>Чокеры</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Хиты продаж -->
+    <section class="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Хиты продаж</h2>
+                <a href="catalog.html" class="btn-link">Все предложения <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="products-grid" id="featured-products">
+                <!-- Товары загружаются через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Коллекции -->
+    <section class="collections-preview">
+        <div class="container">
+            <h2 class="section-title">Коллекции</h2>
+            <div class="collections-grid">
+                <div class="collection-card large" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/collection/Ocean Pearl.jpg');">
+                    <h3>Ocean Pearl</h3>
+                    <p>Морская коллекция с природным жемчугом</p>
+                    <a href="collections.html" class="btn btn-outline">Смотреть</a>
+                </div>
+                <div class="collection-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <h3>Classic Elegance</h3>
+                    <p>Вечная классика</p>
+                </div>
+                <div class="collection-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/collection/modern_design.jpg');">
+                    <h3>Modern Line</h3>
+                    <p>Современный дизайн</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Спецпредложения -->
+    <section class="special-offers">
+        <div class="container">
+            <h2 class="section-title">Специальные предложения</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Сертифицированный жемчуг</h3>
+                    <p>Все изделия с сертификатом подлинности</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Обмен украшений</h3>
+                    <p>Обменяйте старое украшение +5000₽ к покупке</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Пожизненная гарантия</h3>
+                    <p>Гарантия на жемчуг и крепления</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Клубная карта</h3>
+                    <p>Эксклюзивные предложения для участников</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

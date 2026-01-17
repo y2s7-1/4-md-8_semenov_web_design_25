@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клубная карта - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Коротный номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Магазин бижутерии</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html" class="active">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Клубная карта -->
+    <main class="club-page">
+        <div class="container">
+            <div class="club-hero">
+                <div class="club-hero-content">
+                    <h1 class="page-title">Клубная карта Marialit</h1>
+                    <p class="page-subtitle">Привилегии, эксклюзивные предложения и персональный сервис для наших постоянных клиентов</p>
+                    <button class="btn btn-primary" id="join-club-btn">Вступить в клуб</button>
+                </div>
+                <div class="club-hero-image">
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Клубная карта Marialit">
+                </div>
+            </div>
+            
+            <div class="club-benefits">
+                <h2>Преимущества клубной карты</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h3>Скидка 10%</h3>
+                        <p>Постоянная скидка на все покупки</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Подарок приветственный</h3>
+                        <p>Серьги с жемчугом при первой покупке от 50 000₽</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h3>Подарок на день рождения</h3>
+                        <p>Специальный подарок в ваш день рождения</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Доступ к эксклюзивам</h3>
+                        <p>Первыми получайте информацию о новинках</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Бесплатная доставка</h3>
+                        <p>Бесплатная доставка по всей России</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Расширенная гарантия</h3>
+                        <p>Гарантия 5 лет на все изделия</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="club-levels">
+                <h2>Уровни клубной карты</h2>
+                <div class="levels-grid">
+                    <div class="level-card">
+                        <div class="level-header silver">
+                            <h3>Silver</h3>
+                            <p>От 30 000₽ в год</p>
+                        </div>
+                        <div class="level-content">
+                            <ul>
+                                <li>Скидка 5% на все покупки</li>
+                                <li>Бесплатная доставка</li>
+                                <li>Участие в мероприятиях</li>
+                                <li>Уход за украшениями</li>
+                            </ul>
+                            <button class="btn btn-outline level-select" data-level="silver">Выбрать</button>
+                        </div>
+                    </div>
+                    <div class="level-card featured">
+                        <div class="level-header gold">
+                            <h3>Gold</h3>
+                            <p>От 100 000₽ в год</p>
+                            <div class="popular-badge">Популярный</div>
+                        </div>
+                        <div class="level-content">
+                            <ul>
+                                <li>Скидка 10% на все покупки</li>
+                                <li>Приветственный подарок</li>
+                                <li>Персональный менеджер</li>
+                                <li>Подарок на день рождения</li>
+                                <li>Доступ к эксклюзивам</li>
+                            </ul>
+                            <button class="btn btn-primary level-select" data-level="gold">Выбрать</button>
+                        </div>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-header platinum">
+                            <h3>Platinum</h3>
+                            <p>От 300 000₽ в год</p>
+                        </div>
+                        <div class="level-content">
+                            <ul>
+                                <li>Скидка 15% на все покупки</li>
+                                <li>Индивидуальный дизайн</li>
+                                <li>Приоритетное обслуживание</li>
+                                <li>Приглашения на закрытые мероприятия</li>
+                                <li>Экскурсия в мастерскую</li>
+                            </ul>
+                            <button class="btn btn-outline level-select" data-level="platinum">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="club-form-section">
+                <div class="form-container">
+                    <h2>Стать участником клуба</h2>
+                    <form id="club-form" class="club-form">
+                        <div class="form-group">
+                            <label for="name">Имя и фамилия *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="level">Выберите уровень *</label>
+                            <select id="level" name="level" required>
+                                <option value="">Выберите уровень</option>
+                                <option value="silver">Silver (от 30 000₽ в год)</option>
+                                <option value="gold">Gold (от 100 000₽ в год)</option>
+                                <option value="platinum">Platinum (от 300 000₽ в год)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Дополнительные пожелания</label>
+                            <textarea id="message" name="message" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            <label for="agreement">Я согласен с условиями клубной программы и политикой конфиденциальности *</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="club-faq">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Как получить клубную карту?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Заполните форму на этой странице или обратитесь в любой салон Marialit. После одобрения заявки вы получите персональную клубную карту.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Как начисляются бонусы?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Бонусы начисляются в размере 5% от суммы каждой покупки. Накопленные бонусы можно использовать для оплаты следующих покупок.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Можно ли повысить уровень карты?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, при достижении необходимой суммы покупок в течение года ваш уровень автоматически повышается на следующий.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Действует ли карта в других городах?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, клубная карта действует во всех салонах Marialit по всей России, а также в интернет-магазине.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно успешной регистрации -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Заявка отправлена!</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Спасибо за заявку на вступление в клуб Marialit!</p>
+                <p>Наш менеджер свяжется с вами в течение 24 часов для подтверждения регистрации.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary modal-close">Отлично</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="club.js"></script>
+</body>
+</html>

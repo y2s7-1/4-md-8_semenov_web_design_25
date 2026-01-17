@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новинки - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Магазин бижутерии</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html" class="active">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Новинки -->
+    <main class="new-page">
+        <div class="container">
+            <h1 class="page-title">Новые поступления</h1>
+            <p class="page-subtitle">Самые свежие коллекции и эксклюзивные изделия</p>
+            
+            <div class="new-collection">
+                <div class="collection-hero">
+                    <div class="collection-content">
+                        <span class="collection-tag">НОВАЯ КОЛЛЕКЦИЯ</span>
+                        <h2>Lunar Pearl</h2>
+                        <p>Вдохновленная лунным светом и ночным небом, эта коллекция сочетает в себе загадочность и элегантность. Изделия с переливающимся жемчугом и акцентами из черненого серебра.</p>
+                        <a href="collections.html" class="btn btn-primary">Смотреть коллекцию</a>
+                    </div>
+                    <div class="collection-image">
+                             <img src="images/pearls/moon.jpg" alt="Акойя" 
+						onerror="this.src='images/default-pearl.jpg'"
+						style="width: 400px; height: 350px; object-fit: cover; border-radius: 8px;">
+
+						
+                    </div>
+                </div>
+            </div>
+            
+            <div class="new-filters">
+                <button class="new-filter-btn active" data-filter="all">Все новинки</button>
+                <button class="new-filter-btn" data-filter="collection">Коллекции</button>
+                <button class="new-filter-btn" data-filter="limited">Лимитированные</button>
+                <button class="new-filter-btn" data-filter="month">Месяца</button>
+                <button class="new-filter-btn" data-filter="week">Недели</button>
+            </div>
+            
+            <div class="new-products">
+                <h2>Свежие поступления</h2>
+                <div class="new-products-grid" id="new-products">
+                    <!-- Новинки загружаются через JavaScript -->
+                </div>
+            </div>
+            
+            <div class="limited-edition">
+                <div class="limited-header">
+                    <h2>Лимитированные серии</h2>
+                    <p>Эксклюзивные изделия, созданные в ограниченном количестве</p>
+                </div>
+                <div class="limited-grid">
+                    <div class="limited-card">
+                        <div class="limited-image">
+                            <img src="images/new/new1.jpg" alt="Серьги «Селена»">
+                            <div class="limited-badge">15/30</div>
+                        </div>
+                        <div class="limited-content">
+                            <h3>Ожерелье «Аурора»</h3>
+                            <p>Всего 30 экземпляров. Жемчуг Таити с бриллиантовыми вставками.</p>
+                            <div class="limited-details">
+                                <span class="limited-price">69 000 ₽</span>
+                                <span class="limited-count">Осталось 15 шт</span>
+                            </div>
+                            <button class="btn btn-primary">Купить сейчас</button>
+                        </div>
+                    </div>
+                    
+                    <div class="limited-card">
+                        <div class="limited-image">
+                            <img src="images/new/new2.jpg" alt="Серьги «Селена»">
+                            <div class="limited-badge">8/20</div>
+                        </div>
+                        <div class="limited-content">
+                            <h3>Серьги «Селена»</h3>
+                            <p>Лимит 20 пар. Жемчуг Акойя в обрамлении белого золота.</p>
+                            <div class="limited-details">
+                                <span class="limited-price">188 000 ₽</span>
+                                <span class="limited-count">Осталось 8 шт</span>
+                            </div>
+                            <button class="btn btn-primary">Купить сейчас</button>
+                        </div>
+                    </div>
+                    
+                    <div class="limited-card">
+                        <div class="limited-image">
+                            <img src="images/new/new3.jpg" alt="Серьги «Селена»">
+                            <div class="limited-badge">22/50</div>
+                        </div>
+                        <div class="limited-content">
+                            <h3>Кольцо «Луна»</h3>
+                            <p>Тираж 50 колец. Черный жемчуг с сапфировым акцентом.</p>
+                            <div class="limited-details">
+                                <span class="limited-price">44 000 ₽</span>
+                                <span class="limited-count">Осталось 22 шт</span>
+                            </div>
+                            <button class="btn btn-primary">Купить сейчас</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="new-arrivals-timeline">
+                <h2>График поступлений</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Январь 2026</div>
+                        <div class="timeline-content">
+                            <h3>Коллекция Lunar Pearl</h3>
+                            <p>Ночная тематика, черненое серебро, жемчуг с переливами</p>
+                            <span class="timeline-status available">Доступно</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Февраль 2026</div>
+                        <div class="timeline-content">
+                            <h3>Летняя коллекция</h3>
+                            <p>Морская тематика, яркие акценты, легкие формы</p>
+                            <span class="timeline-status upcoming">Скоро</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Март 2026</div>
+                        <div class="timeline-content">
+                            <h3>Юбилейная серия</h3>
+                            <p>К 30-летию Marialit, эксклюзивные дизайны</p>
+                            <span class="timeline-status upcoming">Скоро</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="new-subscription">
+                <div class="subscription-content">
+                    <h2>Узнавайте о новинках первыми</h2>
+                    <p>Подпишитесь на уведомления и получайте информацию о новых поступлениях за 24 часа до официального релиза</p>
+                    <form class="new-subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться на новинки</button>
+                    </form>
+                    <p class="subscription-note">Вы можете отписаться в любой момент. Мы уважаем вашу конфиденциальность.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="new.js"></script>
+</body>
+</html>

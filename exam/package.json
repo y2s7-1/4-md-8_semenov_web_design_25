@@ -1,0 +1,16 @@
+{
+  "name": "miuz-jewelry-store",
+  "version": "1.0.0",
+  "description": "Интернет-магазин ювелирных украшений MIUZ Diamonds",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server .",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": ["jewelry", "ecommerce", "miuz", "diamonds"],
+  "author": "Student Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

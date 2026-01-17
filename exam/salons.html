@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салоны - Marialit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>8 800 555 19 20</span>
+                    <small>Короткий номер: *1920</small>
+                </div>
+                <div class="header-logo">
+                    <h1>Marialit</h1>
+                    <p class="logo-subtitle">Магазин бижутерии</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" aria-label="Поиск">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-icon" aria-label="Избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-icon cart-btn" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главное</a></li>
+                    <li><a href="catalog.html">Украшения</a></li>
+                    <li><a href="pearls.html">Жемчуг</a></li>
+                    <li><a href="new.html">Новинки</a></li>
+                    <li><a href="events.html">Мероприятия</a></li>
+                    <li><a href="salons.html" class="active">Салоны</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="club.html">Клубная карта</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Салоны -->
+    <main class="salons-page">
+        <div class="container">
+            <h1 class="page-title">Наши салоны</h1>
+            <p class="page-subtitle">Посетите наши бутики в 12 городах России</p>
+            
+            <div class="salons-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск по городу или адресу" id="salon-search">
+                    <button class="btn btn-primary" id="search-btn">Найти</button>
+                </div>
+                <div class="search-filters">
+                    <select id="city-filter">
+                        <option value="">Все города</option>
+                        <option value="moscow">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="ekb">Екатеринбург</option>
+                        <option value="kazan">Казань</option>
+                        <option value="sochi">Сочи</option>
+                    </select>
+                    <select id="service-filter">
+                        <option value="">Все услуги</option>
+                        <option value="fitting">Примерка</option>
+                        <option value="repair">Ремонт</option>
+                        <option value="consultation">Консультация</option>
+                        <option value="events">Мероприятия</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="salons-map">
+                <div class="map-placeholder">
+                    <div class="map-info">
+                        <h3>Карта салонов Marialit</h3>
+                        <p>Здесь будет интерактивная карта с расположением всех салонов.</p>
+                        <p>Для демонстрации используются статические данные.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="salons-list">
+                <div class="salon-card">
+                    <div class="salon-image">
+					<img src="images/salons/sal1.jpg" alt="Салон на Тверской">
+                        <span class="salon-tag">Флагманский</span>
+                    </div>
+                    <div class="salon-content">
+                        <h3>Marialit на Тверской</h3>
+                        <div class="salon-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Москва, ул. Тверская, 15</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Ежедневно 10:00 - 22:00</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+7 (495) 123-45-67</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-subway"></i>
+                                <span>м. Тверская, Пушкинская</span>
+                            </div>
+                        </div>
+                        <div class="salon-services">
+                            <span class="service-tag">Примерка</span>
+                            <span class="service-tag">Ремонт</span>
+                            <span class="service-tag">Консультация</span>
+                            <span class="service-tag">Мероприятия</span>
+                        </div>
+                        <div class="salon-actions">
+                            <button class="btn btn-outline" data-saloon="1">Проложить маршрут</button>
+                            <button class="btn btn-primary" data-saloon="1">Записаться на примерку</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="salon-card">
+                    <div class="salon-image">
+					<img src="images/salons/sal2.jpg" alt="Салон в ЦУМе">
+                        <span class="salon-tag">В ТЦ</span>
+                    </div>
+                    <div class="salon-content">
+                        <h3>Marialit в ЦУМе</h3>
+                        <div class="salon-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Москва, ул. Петровка, 2</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Сб 10:00 - 21:00, Вс 11:00 - 20:00</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+7 (495) 987-65-43</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-subway"></i>
+                                <span>м. Театральная, Кузнецкий мост</span>
+                            </div>
+                        </div>
+                        <div class="salon-services">
+                            <span class="service-tag">Примерка</span>
+                            <span class="service-tag">Консультация</span>
+                        </div>
+                        <div class="salon-actions">
+                            <button class="btn btn-outline" data-saloon="2">Проложить маршрут</button>
+                            <button class="btn btn-primary" data-saloon="2">Записаться на примерку</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="salon-card">
+                    <div class="salon-image">
+					<img src="images/salons/sal3.jpg" alt="Салон в Санкт-Петербурге"> 
+                    </div>
+                    <div class="salon-content">
+                        <h3>Marialit в Санкт-Петербурге</h3>
+                        <div class="salon-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Санкт-Петербург, Невский пр., 60</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Ежедневно 11:00 - 21:00</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+7 (812) 456-78-90</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-subway"></i>
+                                <span>м. Невский проспект, Гостиный двор</span>
+                            </div>
+                        </div>
+                        <div class="salon-services">
+                            <span class="service-tag">Примерка</span>
+                            <span class="service-tag">Ремонт</span>
+                            <span class="service-tag">Консультация</span>
+                        </div>
+                        <div class="salon-actions">
+                            <button class="btn btn-outline" data-saloon="3">Проложить маршрут</button>
+                            <button class="btn btn-primary" data-saloon="3">Записаться на примерку</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="salon-card">
+                    <div class="salon-image">
+					<img src="images/salons/sal4.jpg" alt="Салон в Екатеринбурге">
+                    </div>
+                    <div class="salon-content">
+                        <h3>Marialit в Екатеринбурге</h3>
+                        <div class="salon-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Екатеринбург, ул. Вайнера, 10</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Пт 10:00 - 20:00, Сб-Вс 11:00 - 19:00</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+7 (343) 789-01-23</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-subway"></i>
+                                <span>Площадь 1905 года</span>
+                            </div>
+                        </div>
+                        <div class="salon-services">
+                            <span class="service-tag">Примерка</span>
+                            <span class="service-tag">Консультация</span>
+                        </div>
+                        <div class="salon-actions">
+                            <button class="btn btn-outline" data-saloon="4">Проложить маршрут</button>
+                            <button class="btn btn-primary" data-saloon="4">Записаться на примерку</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="salons-features">
+                <h2>Услуги в салонах</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>Персональная примерка</h3>
+                        <p>Запишитесь на индивидуальную примерку в удобное время</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Консультация эксперта</h3>
+                        <p>Поможем подобрать украшение для любого случая</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Ремонт и уход</h3>
+                        <p>Профессиональный ремонт и чистка ваших украшений</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Подарочная упаковка</h3>
+                        <p>Элегантная упаковка для подарка бесплатно</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="appointment-section">
+                <div class="appointment-form">
+                    <h2>Запись на примерку</h2>
+                    <form id="appointment-form">
+                        <div class="form-group">
+                            <label for="appointment-name">Имя *</label>
+                            <input type="text" id="appointment-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointment-phone">Телефон *</label>
+                            <input type="tel" id="appointment-phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointment-saloon">Салон *</label>
+                            <select id="appointment-saloon" name="saloon" required>
+                                <option value="">Выберите салон</option>
+                                <option value="1">Marialit на Тверской (Москва)</option>
+                                <option value="2">Marialit в ЦУМе (Москва)</option>
+                                <option value="3">Marialit в Санкт-Петербурге</option>
+                                <option value="4">Marialit в Екатеринбурге</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointment-date">Дата *</label>
+                            <input type="date" id="appointment-date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointment-time">Время *</label>
+                            <select id="appointment-time" name="time" required>
+                                <option value="">Выберите время</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointment-comment">Комментарий</label>
+                            <textarea id="appointment-comment" name="comment" rows="3" placeholder="Например, интересуют серьги с жемчугом"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Записаться</button>
+                    </form>
+                </div>
+                <div class="appointment-info">
+                    <h3>Что вас ждет на примерке?</h3>
+                    <ul>
+                        <li>Индивидуальный подход и конфиденциальность</li>
+                        <li>Возможность примерить несколько моделей</li>
+                        <li>Профессиональные советы стилиста</li>
+                        <li>Специальные условия для клубных карт</li>
+                        <li>Бесплатный чай или кофе</li>
+                    </ul>
+                    <div class="appointment-contact">
+                        <h4>Есть вопросы?</h4>
+                        <p>Звоните: <strong>8 800 555 19 20</strong></p>
+                        <p>Ежедневно с 9:00 до 21:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marialit</h3>
+                    <p>Ювелирный дом с 1995 года. Украшения с натуральным жемчугом ручной работы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="collections.html">Ocean Pearl</a></li>
+                        <li><a href="collections.html">Classic Elegance</a></li>
+                        <li><a href="collections.html">Modern Line</a></li>
+                        <li><a href="collections.html">Vintage Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="salons.html">Салоны</a></li>
+                        <li><a href="club.html">Клубная карта</a></li>
+                        <li><a href="events.html">Мероприятия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Подписка на новости</h4>
+                    <form class="subscription-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marialit. Все права защищены.</p>
+                <p>Ювелирные украшения с натуральным жемчугом</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине -->
+                    <p class="cart-empty">Корзина пуста</p>
+                </div>
+                <div class="cart-total">
+                    <p>Итого: <span id="cart-total-price">0</span> ₽</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline modal-close">Продолжить покупки</button>
+                <button class="btn btn-primary" id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно успешной записи -->
+    <div class="modal" id="appointment-success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Запись оформлена!</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Спасибо за запись на примерку!</p>
+                <p>Мы свяжемся с вами для подтверждения времени.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary modal-close">Отлично</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="salons.js"></script>
+</body>
+</html>
